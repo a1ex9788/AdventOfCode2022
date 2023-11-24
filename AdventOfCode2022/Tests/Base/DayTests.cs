@@ -1,5 +1,4 @@
-﻿using AdventOfCode2022.Base;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -7,13 +6,13 @@ using System.IO;
 namespace AdventOfCode2022.Tests.Base
 {
     [TestClass]
-    public abstract class DayXXTests<T>
-        where T : DayXX
+    public abstract class DayTests<T>
+        where T : IDay
     {
         private readonly string solverFolder;
-        private readonly DayXX solver;
+        private readonly IDay solver;
 
-        public DayXXTests(Func<string, DayXX> getSolverFunc)
+        public DayTests(Func<string, IDay> getSolverFunc)
         {
             this.solverFolder = Path.Combine("..", "..", "..", "..", typeof(T).Name);
 

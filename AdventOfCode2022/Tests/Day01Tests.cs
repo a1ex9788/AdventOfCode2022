@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AdventOfCode2022Tests
 {
     [TestClass]
-    public class Day01Tests : DayXXTests<Day01>
+    public class Day01Tests : DayTests<Day01>
     {
         public Day01Tests()
             : base(input => new Day01(input))
