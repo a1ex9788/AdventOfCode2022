@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using AdventOfCode2022.Base;
 
-namespace AdventOfCode2022
+namespace AdventOfCode2022.Day01
 {
-    public class Day05 : DayXX
+    public class Day01 : DayXX
     {
         private readonly IEnumerable<string> input;
 
-        public Day05(string input)
+        public Day01(string input)
         {
             this.input = input.Split("\r\n");
         }

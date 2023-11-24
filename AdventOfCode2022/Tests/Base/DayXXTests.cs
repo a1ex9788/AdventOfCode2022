@@ -1,27 +1,41 @@
 ﻿using AdventOfCode2022.Base;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.IO;
 
 namespace AdventOfCode2022.Tests.Base
 {
     [TestClass]
-    public abstract class DayXXTests
+    public abstract class DayXXTests<T>
+        where T : DayXX
     {
-        protected abstract DayXX Solver { get; }
+        private readonly string solverFolder;
+        private readonly DayXX solver;
 
-        protected abstract string Part1Output { get; }
-        protected abstract string Part2Output { get; }
-
-        [TestMethod]
-        public void DefaultSolvePart1Test()
+        public DayXXTests(Func<string, DayXX> getSolverFunc)
         {
-            Assert.AreEqual(Convert.ToInt64(Part1Output), Solver.SolvePart1());
+            this.solverFolder = Path.Combine("..", "..", "..", "..", typeof(T).Name);
+
+            string input = File.ReadAllText(Path.Combine(this.solverFolder, "Input.txt"));
+
+            this.solver = getSolverFunc.Invoke(input);
         }
 
         [TestMethod]
-        public void DefaultSolvePart2Test()
+        public void SolvePart1Test()
         {
-            Assert.AreEqual(Convert.ToInt64(Part2Output), Solver.SolvePart2());
+            string output = File.ReadAllText(Path.Combine(this.solverFolder, "OutputPart1.txt"));
+
+            this.solver.SolvePart1().Should().Be(Convert.ToInt64(output));
+        }
+
+        [TestMethod]
+        public void SolvePart2Test()
+        {
+            string output = File.ReadAllText(Path.Combine(this.solverFolder, "OutputPart2.txt"));
+
+            this.solver.SolvePart2().Should().Be(Convert.ToInt64(output));
         }
     }
 }
