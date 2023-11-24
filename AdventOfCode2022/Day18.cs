@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using AdventOfCode2022.Base;
 
 namespace AdventOfCode2022
 {
-    public class Day18 : Solver
+    public class Day18 : DayXX
     {
         private readonly IEnumerable<string> input;
 

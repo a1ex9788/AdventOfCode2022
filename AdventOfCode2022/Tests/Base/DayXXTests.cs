@@ -1,13 +1,13 @@
-﻿using AdventOfCode2022;
+﻿using AdventOfCode2022.Base;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AdventOfCode2022Tests
+namespace AdventOfCode2022.Tests.Base
 {
     [TestClass]
-    public abstract class Tester
+    public abstract class DayXXTests
     {
-        protected abstract Solver Solver { get; }
+        protected abstract DayXX Solver { get; }
 
         protected abstract string Part1Output { get; }
         protected abstract string Part2Output { get; }
@@ -15,13 +15,13 @@ namespace AdventOfCode2022Tests
         [TestMethod]
         public void DefaultSolvePart1Test()
         {
-            Assert.AreEqual(Convert.ToInt64(this.Part1Output), this.Solver.SolvePart1());
+            Assert.AreEqual(Convert.ToInt64(Part1Output), Solver.SolvePart1());
         }
 
         [TestMethod]
         public void DefaultSolvePart2Test()
         {
-            Assert.AreEqual(Convert.ToInt64(this.Part2Output), this.Solver.SolvePart2());
+            Assert.AreEqual(Convert.ToInt64(Part2Output), Solver.SolvePart2());
         }
     }
 }

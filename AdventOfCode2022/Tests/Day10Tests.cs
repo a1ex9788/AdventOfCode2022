@@ -1,13 +1,15 @@
 ﻿using AdventOfCode2022;
+using AdventOfCode2022.Base;
+using AdventOfCode2022.Tests.Base;
 using AdventOfCode2022Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode2022Tests
 {
     [TestClass]
-    public class Day10Tests : Tester
+    public class Day10Tests : DayXXTests
     {
-        protected override Solver Solver => new Day10(Resources.Day10Input);
+        protected override DayXX Solver => new Day10(Resources.Day10Input);
 
         protected override string Part1Output => Resources.Day10Part1Output;
         protected override string Part2Output => Resources.Day10Part2Output;

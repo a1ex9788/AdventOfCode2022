@@ -1,6 +1,6 @@
-﻿namespace AdventOfCode2022
+﻿namespace AdventOfCode2022.Base
 {
-    public abstract class Solver
+    public abstract class DayXX
     {
         public abstract long SolvePart1();
 

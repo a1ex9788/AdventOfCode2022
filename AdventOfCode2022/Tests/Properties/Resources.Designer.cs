@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdventOfCode2022Tests.Properties {
+namespace AdventOfCode2022.Tests.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AdventOfCode2022Tests.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AdventOfCode2022Tests.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AdventOfCode2022.Tests.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -732,33 +732,6 @@ namespace AdventOfCode2022Tests.Properties {
         internal static string Day25Part2Output {
             get {
                 return ResourceManager.GetString("Day25Part2Output", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -1.
-        /// </summary>
-        internal static string DayXXInput {
-            get {
-                return ResourceManager.GetString("DayXXInput", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -1.
-        /// </summary>
-        internal static string DayXXPart1Output {
-            get {
-                return ResourceManager.GetString("DayXXPart1Output", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to -1.
-        /// </summary>
-        internal static string DayXXPart2Output {
-            get {
-                return ResourceManager.GetString("DayXXPart2Output", resourceCulture);
             }
         }
     }

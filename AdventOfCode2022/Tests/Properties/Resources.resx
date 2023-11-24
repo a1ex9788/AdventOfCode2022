@@ -342,13 +342,4 @@
   <data name="Day25Part2Output" xml:space="preserve">
     <value>-1</value>
   </data>
-  <data name="DayXXInput" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="DayXXPart1Output" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="DayXXPart2Output" xml:space="preserve">
-    <value>-1</value>
-  </data>
 </root>
