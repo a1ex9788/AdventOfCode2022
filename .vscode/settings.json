@@ -1,0 +1,17 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "onWindowChange",
+    "files.trimTrailingWhitespace": true,
+    "git.confirmSync": false,
+    "omnisharp.enableMsBuildLoadProjectsOnDemand": true,
+    "powershell.codeFormatting.preset": "Allman",
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.whitespaceBetweenParameters": true,
+    "workbench.colorTheme": "Default Dark Modern"
+}
