@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdventOfCode2022.Day01
+namespace AdventOfCode2022.DayXX
 {
-    public class Day01 : IDay
+    public class DayXXSolver : IDaySolver
     {
         private readonly IEnumerable<string> input;
 
-        public Day01(string input)
+        public DayXXSolver(string input)
         {
             this.input = input.Split("\r\n");
 

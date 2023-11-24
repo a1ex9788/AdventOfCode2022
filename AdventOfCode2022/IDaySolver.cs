@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2022
 {
-    public interface IDay
+    public interface IDaySolver
     {
         public long SolvePart1();
 
