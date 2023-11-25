@@ -22,8 +22,8 @@ namespace AdventOfCode2022.Tests.UnitTests.DayXX
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
-        public void SolvePart1CustomTest(string exampleInputName, long expectedResult)
+        [DataRow("Example1", "-1")]
+        public void SolvePart1CustomTest(string exampleInputName, string expectedResult)
         {
             TestUtilities.SolvePart1CustomTest(
                 input => new DayXXSolver(input), TestsFolder!, exampleInputName, expectedResult);
@@ -36,8 +36,8 @@ namespace AdventOfCode2022.Tests.UnitTests.DayXX
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
-        public void SolvePart2CustomTest(string exampleInputName, long expectedResult)
+        [DataRow("Example1", "-1")]
+        public void SolvePart2CustomTest(string exampleInputName, string expectedResult)
         {
             TestUtilities.SolvePart2CustomTest(
                 input => new DayXXSolver(input), TestsFolder!, exampleInputName, expectedResult);

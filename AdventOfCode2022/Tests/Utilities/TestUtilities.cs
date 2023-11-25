@@ -26,7 +26,7 @@ namespace AdventOfCode2022.Tests.Utilities
             Func<string, IDaySolver> getDaySolverFunc,
             string testFolder,
             string exampleInputName,
-            long expectedResult)
+            string expectedResult)
         {
             string input = File.ReadAllText(Path.Combine(testFolder, $"{exampleInputName}Input.txt")); ;
 
@@ -37,14 +37,14 @@ namespace AdventOfCode2022.Tests.Utilities
         {
             string expectedResult = File.ReadAllText(Path.Combine(solverFolder, "Part1Output.txt"));
 
-            daySolver.SolvePart1().Should().Be(int.Parse(expectedResult));
+            daySolver.SolvePart1().Should().Be(expectedResult);
         }
 
         internal static void SolvePart2CustomTest(
             Func<string, IDaySolver> getDaySolverFunc,
             string testFolder,
             string exampleInputName,
-            long expectedResult)
+            string expectedResult)
         {
             string input = File.ReadAllText(Path.Combine(testFolder, $"{exampleInputName}Input.txt")); ;
 
@@ -55,7 +55,7 @@ namespace AdventOfCode2022.Tests.Utilities
         {
             string expectedResult = File.ReadAllText(Path.Combine(solverFolder, "Part2Output.txt"));
 
-            daySolver.SolvePart2().Should().Be(int.Parse(expectedResult));
+            daySolver.SolvePart2().Should().Be(expectedResult);
         }
     }
 }

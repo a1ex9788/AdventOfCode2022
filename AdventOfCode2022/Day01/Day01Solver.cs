@@ -21,17 +21,17 @@ namespace AdventOfCode2022.Day01
             this.caloriesByElfOrderedByMax = caloriesByElf.OrderByDescending(l => l).ToList();
         }
 
-        public long SolvePart1()
+        public string SolvePart1()
         {
-            return this.caloriesByElfOrderedByMax.First();
+            return this.caloriesByElfOrderedByMax.First().ToString();
         }
 
-        public long SolvePart2()
+        public string SolvePart2()
         {
             long caloriesOfThreeMaxs = this.caloriesByElfOrderedByMax[0]
                 + this.caloriesByElfOrderedByMax[1] + this.caloriesByElfOrderedByMax[2];
 
-            return caloriesOfThreeMaxs;
+            return caloriesOfThreeMaxs.ToString();
         }
     }
 }

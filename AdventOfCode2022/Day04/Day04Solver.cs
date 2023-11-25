@@ -27,7 +27,7 @@ namespace AdventOfCode2022.Day04
             }
         }
 
-        public long SolvePart1()
+        public string SolvePart1()
         {
             int pairsWithFullyContainedSection = 0;
 
@@ -41,10 +41,10 @@ namespace AdventOfCode2022.Day04
                 }
             }
 
-            return pairsWithFullyContainedSection;
+            return pairsWithFullyContainedSection.ToString();
         }
 
-        public long SolvePart2()
+        public string SolvePart2()
         {
             int pairsWithOverlaps = 0;
 
@@ -56,7 +56,7 @@ namespace AdventOfCode2022.Day04
                 }
             }
 
-            return pairsWithOverlaps;
+            return pairsWithOverlaps.ToString();
         }
     }
 }

@@ -2,8 +2,8 @@
 {
     public interface IDaySolver
     {
-        public long SolvePart1();
+        public string SolvePart1();
 
-        public long SolvePart2();
+        public string SolvePart2();
     }
 }

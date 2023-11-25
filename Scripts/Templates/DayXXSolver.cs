@@ -14,14 +14,14 @@ namespace AdventOfCode2022.DayXX
             Console.Write(this.input.ToString());
         }
 
-        public long SolvePart1()
+        public string SolvePart1()
         {
-            return 0;
+            return string.Empty;
         }
 
-        public long SolvePart2()
+        public string SolvePart2()
         {
-            return 0;
+            return string.Empty;
         }
     }
 }

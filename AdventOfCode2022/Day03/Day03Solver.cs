@@ -12,7 +12,7 @@ namespace AdventOfCode2022.Day03
             this.rucksacks = input.Split("\r\n");
         }
 
-        public long SolvePart1()
+        public string SolvePart1()
         {
             IList<(IList<char> A, IList<char> B)> parsedRucksacks =
                 new List<(IList<char> A, IList<char> B)>();
@@ -34,10 +34,10 @@ namespace AdventOfCode2022.Day03
                 prioritiesSum += Helper.GetPriority(commonItem);
             }
 
-            return prioritiesSum;
+            return prioritiesSum.ToString();
         }
 
-        public long SolvePart2()
+        public string SolvePart2()
         {
             int prioritiesSum = 0;
 
@@ -52,7 +52,7 @@ namespace AdventOfCode2022.Day03
                 prioritiesSum += Helper.GetPriority(commonItem);
             }
 
-            return prioritiesSum;
+            return prioritiesSum.ToString();
         }
     }
 }

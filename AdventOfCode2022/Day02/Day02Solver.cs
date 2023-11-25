@@ -13,7 +13,7 @@ namespace AdventOfCode2022.Day02
             this.rounds = input.Split("\r\n").ToList();
         }
 
-        public long SolvePart1()
+        public string SolvePart1()
         {
             IList<(Bid Opponent, Bid Me)> parsedRounds = new List<(Bid Opponent, Bid Me)>();
 
@@ -28,10 +28,10 @@ namespace AdventOfCode2022.Day02
                 parsedRounds.Add((opponent, me));
             }
 
-            return GetScore(parsedRounds);
+            return GetScore(parsedRounds).ToString();
         }
 
-        public long SolvePart2()
+        public string SolvePart2()
         {
             IList<(Bid Opponent, Bid Me)> parsedRounds = new List<(Bid Opponent, Bid Me)>();
 
@@ -46,7 +46,7 @@ namespace AdventOfCode2022.Day02
                 parsedRounds.Add((opponent, me));
             }
 
-            return GetScore(parsedRounds);
+            return GetScore(parsedRounds).ToString();
         }
 
         private static long GetScore(IList<(Bid Opponent, Bid Me)> rounds)
