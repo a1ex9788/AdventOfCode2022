@@ -22,7 +22,7 @@ namespace AdventOfCode2022.Tests.UnitTests.Day04
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
+        [DataRow("Example1", 2)]
         public void SolvePart1CustomTest(string exampleInputName, long expectedResult)
         {
             TestUtilities.SolvePart1CustomTest(
@@ -36,7 +36,7 @@ namespace AdventOfCode2022.Tests.UnitTests.Day04
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
+        [DataRow("Example1", 4)]
         public void SolvePart2CustomTest(string exampleInputName, long expectedResult)
         {
             TestUtilities.SolvePart2CustomTest(
