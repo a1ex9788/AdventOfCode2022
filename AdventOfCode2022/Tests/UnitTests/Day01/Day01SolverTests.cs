@@ -1,11 +1,11 @@
-﻿using AdventOfCode2022.DayXX;
+﻿using AdventOfCode2022.Day01;
 using AdventOfCode2022.Tests.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AdventOfCode2022.Tests.UnitTests.DayXX
+namespace AdventOfCode2022.Tests.UnitTests.Day01
 {
     [TestClass]
-    public class DayXXSolverTests
+    public class Day01SolverTests
     {
         private static string? SolverFolder;
         private static string? TestsFolder;
@@ -14,19 +14,19 @@ namespace AdventOfCode2022.Tests.UnitTests.DayXX
         [ClassInitialize]
         public static void Initialize(TestContext _)
         {
-            (SolverFolder, TestsFolder) = TestUtilities.GetFolders<DayXXSolver>();
+            (SolverFolder, TestsFolder) = TestUtilities.GetFolders<Day01Solver>();
 
             string input = TestUtilities.GetInput(SolverFolder);
 
-            DaySolver = new DayXXSolver(input);
+            DaySolver = new Day01Solver(input);
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
+        [DataRow("Example1", 24000)]
         public void SolvePart1CustomTest(string exampleInputName, long expectedResult)
         {
             TestUtilities.SolvePart1CustomTest(
-                input => new DayXXSolver(input), TestsFolder!, exampleInputName, expectedResult);
+                input => new Day01Solver(input), TestsFolder!, exampleInputName, expectedResult);
         }
 
         [TestMethod]
@@ -36,11 +36,11 @@ namespace AdventOfCode2022.Tests.UnitTests.DayXX
         }
 
         [TestMethod]
-        [DataRow("Example1", -1)]
+        [DataRow("Example1", 45000)]
         public void SolvePart2CustomTest(string exampleInputName, long expectedResult)
         {
             TestUtilities.SolvePart2CustomTest(
-                input => new DayXXSolver(input), TestsFolder!, exampleInputName, expectedResult);
+                input => new Day01Solver(input), TestsFolder!, exampleInputName, expectedResult);
         }
 
         [TestMethod]

@@ -10,7 +10,7 @@ $adventOfCodeFolder = Join-Path $repositoryRoot "AdventOfCode2022"
 $dayXXSolverTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTemplatePath)
 $dayXXSolverTestsTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTestsTemplatePath)
 
-function CreateFiles([string]$Number)
+function CreateLogicFiles([string]$Number)
 {
     $folder = Join-Path $adventOfCodeFolder "Day$Number"
 
@@ -34,10 +34,30 @@ function CreateFiles([string]$Number)
     $file = Join-Path $folder "Part2Output.txt"
     $content = "-1"
     CreateFile -Path $file -Content $content
+}
 
-    $file = Join-Path $adventOfCodeFolder "Tests" "UnitTests" "Day$($Number)SolverTests.cs"
+function CreateTestFiles([string]$Number)
+{
+    $folder = Join-Path $adventOfCodeFolder "Tests" "UnitTests" "Day$Number"
+
+    if (-not (Test-Path $folder))
+    {
+        New-Item $folder -ItemType Directory
+    }
+
+    $file = Join-Path $folder "Day$($Number)SolverTests.cs"
     $content = $dayXXSolverTestsTemplate.Replace("XX", $Number)
     CreateFile -Path $file -Content $content
+
+    $file = Join-Path $folder "Example1Input.txt"
+    $content = "5"
+    CreateFile -Path $file -Content $content
+}
+
+function CreateFiles([string]$Number)
+{
+    CreateLogicFiles -Number $Number
+    CreateTestFiles -Number $Number
 }
 
 for ($i = 1; $i -le 9; $i++)
