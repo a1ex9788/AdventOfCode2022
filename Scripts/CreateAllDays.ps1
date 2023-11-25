@@ -2,11 +2,11 @@ $dayXXSolverTemplatePath = "DayXXSolver.cs"
 $dayXXSolverTestsTemplatePath = "DayXXSolverTests.cs"
 
 $repositoryRoot = Join-Path $PSCommandPath ".." ".."
-$daysCreatorFolder = Join-Path $repositoryRoot "DaysCreator"
+$templatesFolder = Join-Path $repositoryRoot "Scripts" "Templates"
 $adventOfCodeFolder = Join-Path $repositoryRoot "AdventOfCode2022"
 
-$dayXXSolverTemplate = Get-Content (Join-Path $daysCreatorFolder $dayXXSolverTemplatePath)
-$dayXXSolverTestsTemplate = Get-Content (Join-Path $daysCreatorFolder $dayXXSolverTestsTemplatePath)
+$dayXXSolverTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTemplatePath)
+$dayXXSolverTestsTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTestsTemplatePath)
 
 function CreateFile([string]$Path, [string[]]$Content)
 {

@@ -11,15 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
-		GetFormattedInput.ps1 = GetFormattedInput.ps1
 		Versions.props = Versions.props
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DaysCreator", "DaysCreator", "{E053D262-BBE1-4A7F-BB6C-6070B3E19270}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{87438039-A0EE-41FF-9EA1-8D8C3B65D0C0}"
 	ProjectSection(SolutionItems) = preProject
-		DaysCreator\CreateAllDays.ps1 = DaysCreator\CreateAllDays.ps1
-		DaysCreator\DayXX.cs = DaysCreator\DayXX.cs
-		DaysCreator\DayXXTests.cs = DaysCreator\DayXXTests.cs
+		Scripts\CreateAllDays.ps1 = Scripts\CreateAllDays.ps1
+		Scripts\FormatInput.ps1 = Scripts\FormatInput.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{16421211-4F1F-4728-AF5E-290DC73068F6}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Templates\DayXXSolver.cs = Scripts\Templates\DayXXSolver.cs
+		Scripts\Templates\DayXXSolverTests.cs = Scripts\Templates\DayXXSolverTests.cs
 	EndProjectSection
 EndProject
 Global
@@ -39,6 +43,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87438039-A0EE-41FF-9EA1-8D8C3B65D0C0} = {7BA3C93C-E352-4B2C-9B66-11CCD7A7EC85}
+		{16421211-4F1F-4728-AF5E-290DC73068F6} = {87438039-A0EE-41FF-9EA1-8D8C3B65D0C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B90965E4-E92D-4126-A2F1-0AFA7C1C53CE}
