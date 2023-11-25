@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022.Day02
 {
     public class Day02Solver : IDaySolver
     {
-        private readonly IList<string> rounds;
+        private readonly IEnumerable<string> rounds;
 
         public Day02Solver(string input)
         {
-            this.rounds = input.Split("\r\n").ToList();
+            this.rounds = input.Split("\r\n");
         }
 
         public string SolvePart1()
@@ -20,7 +19,7 @@ namespace AdventOfCode2022.Day02
             foreach (string round in this.rounds)
             {
                 GroupCollection matchGroups =
-                    Regex.Match(round, @"([A-Z]) ([A-Z])").Groups;
+                    Regex.Match(round, "([A-Z]) ([A-Z])").Groups;
 
                 Bid opponent = Helper.GetOpponentBid(matchGroups[1].Value);
                 Bid me = Helper.GetMyBidByOrderCriteria(matchGroups[2].Value);
@@ -38,7 +37,7 @@ namespace AdventOfCode2022.Day02
             foreach (string round in this.rounds)
             {
                 GroupCollection matchGroups =
-                    Regex.Match(round, @"([A-Z]) ([A-Z])").Groups;
+                    Regex.Match(round, "([A-Z]) ([A-Z])").Groups;
 
                 Bid opponent = Helper.GetOpponentBid(matchGroups[1].Value);
                 Bid me = Helper.GetMyBidByResultCriteria(opponent, matchGroups[2].Value);

@@ -5,7 +5,7 @@ namespace AdventOfCode2022.Day01
 {
     public class Day01Solver : IDaySolver
     {
-        private readonly IList<long> caloriesByElfOrderedByMax;
+        private readonly IEnumerable<long> caloriesByElfOrderedByMax;
 
         public Day01Solver(string input)
         {
@@ -28,8 +28,9 @@ namespace AdventOfCode2022.Day01
 
         public string SolvePart2()
         {
-            long caloriesOfThreeMaxs = this.caloriesByElfOrderedByMax[0]
-                + this.caloriesByElfOrderedByMax[1] + this.caloriesByElfOrderedByMax[2];
+            long caloriesOfThreeMaxs = this.caloriesByElfOrderedByMax.ElementAt(0)
+                + this.caloriesByElfOrderedByMax.ElementAt(1)
+                + this.caloriesByElfOrderedByMax.ElementAt(2);
 
             return caloriesOfThreeMaxs.ToString();
         }

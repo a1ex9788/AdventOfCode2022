@@ -1,41 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022.Day04
 {
     public class Day04Solver : IDaySolver
     {
-        private readonly IList<(Section A, Section B)> sectionPairs;
+        private readonly IEnumerable<SectionPair> sectionPairs;
 
         public Day04Solver(string input)
         {
-            this.sectionPairs = new List<(Section A, Section B)>();
-
-            foreach (string sectionPair in input.Split("\r\n"))
-            {
-                GroupCollection matchGroups =
-                    Regex.Match(sectionPair, @"(\d+)-(\d+),(\d+)-(\d+)").Groups;
-
-                Section parsedFirstSection = new Section(
-                    matchGroups[1].Value, matchGroups[2].Value);
-
-                Section parsedSecondSection = new Section(
-                    matchGroups[3].Value, matchGroups[4].Value);
-
-                this.sectionPairs.Add((parsedFirstSection, parsedSecondSection));
-            }
+            this.sectionPairs = input.Split("\r\n").Select(s => new SectionPair(s));
         }
 
         public string SolvePart1()
         {
             int pairsWithFullyContainedSection = 0;
 
-            foreach ((Section A, Section B) in this.sectionPairs)
+            foreach (SectionPair sectionPair in this.sectionPairs)
             {
-                IList<int> union = A.Numbers.Union(B.Numbers).ToList();
+                IList<int> aNumbers = sectionPair.A.Numbers;
+                IList<int> bNumbers = sectionPair.B.Numbers;
 
-                if (union.Count == A.Numbers.Count || union.Count == B.Numbers.Count)
+                IList<int> union = aNumbers.Union(bNumbers).ToList();
+
+                if (union.Count == aNumbers.Count || union.Count == bNumbers.Count)
                 {
                     pairsWithFullyContainedSection++;
                 }
@@ -48,9 +36,12 @@ namespace AdventOfCode2022.Day04
         {
             int pairsWithOverlaps = 0;
 
-            foreach ((Section A, Section B) in this.sectionPairs)
+            foreach (SectionPair sectionPair in this.sectionPairs)
             {
-                if (A.Numbers.Intersect(B.Numbers).Any())
+                IList<int> aNumbers = sectionPair.A.Numbers;
+                IList<int> bNumbers = sectionPair.B.Numbers;
+
+                if (aNumbers.Intersect(bNumbers).Any())
                 {
                     pairsWithOverlaps++;
                 }
