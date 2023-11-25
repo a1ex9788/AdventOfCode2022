@@ -1,3 +1,5 @@
+Import-Module (Join-Path $PSCommandPath ".." "Modules" FilesCreation.psm1)
+
 $dayXXSolverTemplatePath = "DayXXSolver.cs"
 $dayXXSolverTestsTemplatePath = "DayXXSolverTests.cs"
 
@@ -7,11 +9,6 @@ $adventOfCodeFolder = Join-Path $repositoryRoot "AdventOfCode2022"
 
 $dayXXSolverTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTemplatePath)
 $dayXXSolverTestsTemplate = Get-Content (Join-Path $templatesFolder $dayXXSolverTestsTemplatePath)
-
-function CreateFile([string]$Path, [string[]]$Content)
-{
-    $Content -join "`r`n" | Set-Content $Path -NoNewline -Encoding UTF-8
-}
 
 function CreateFiles([string]$Number)
 {

@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8743
 	ProjectSection(SolutionItems) = preProject
 		Scripts\CreateAllDays.ps1 = Scripts\CreateAllDays.ps1
 		Scripts\FormatInput.ps1 = Scripts\FormatInput.ps1
+		Scripts\GetInputs.ps1 = Scripts\GetInputs.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A7FD7B1D-909A-4C04-AB63-DB46C125BD7E}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Modules\FilesCreation.psm1 = Scripts\Modules\FilesCreation.psm1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{16421211-4F1F-4728-AF5E-290DC73068F6}"
@@ -46,6 +52,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{87438039-A0EE-41FF-9EA1-8D8C3B65D0C0} = {7BA3C93C-E352-4B2C-9B66-11CCD7A7EC85}
+		{A7FD7B1D-909A-4C04-AB63-DB46C125BD7E} = {87438039-A0EE-41FF-9EA1-8D8C3B65D0C0}
 		{16421211-4F1F-4728-AF5E-290DC73068F6} = {87438039-A0EE-41FF-9EA1-8D8C3B65D0C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
