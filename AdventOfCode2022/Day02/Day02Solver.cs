@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022.Day02
 {
@@ -18,10 +19,11 @@ namespace AdventOfCode2022.Day02
 
             foreach (string round in this.rounds)
             {
-                string[] bids = round.Split(' ');
+                GroupCollection matchGroups =
+                    Regex.Match(round, @"([A-Z]) ([A-Z])").Groups;
 
-                Bid opponent = Helper.GetOpponentBid(char.Parse(bids[0]));
-                Bid me = Helper.GetMyBidByOrderCriteria(char.Parse(bids[1]));
+                Bid opponent = Helper.GetOpponentBid(matchGroups[1].Value);
+                Bid me = Helper.GetMyBidByOrderCriteria(matchGroups[2].Value);
 
                 parsedRounds.Add((opponent, me));
             }
@@ -35,10 +37,11 @@ namespace AdventOfCode2022.Day02
 
             foreach (string round in this.rounds)
             {
-                string[] bids = round.Split(' ');
+                GroupCollection matchGroups =
+                    Regex.Match(round, @"([A-Z]) ([A-Z])").Groups;
 
-                Bid opponent = Helper.GetOpponentBid(char.Parse(bids[0]));
-                Bid me = Helper.GetMyBidByResultCriteria(opponent, char.Parse(bids[1]));
+                Bid opponent = Helper.GetOpponentBid(matchGroups[1].Value);
+                Bid me = Helper.GetMyBidByResultCriteria(opponent, matchGroups[2].Value);
 
                 parsedRounds.Add((opponent, me));
             }

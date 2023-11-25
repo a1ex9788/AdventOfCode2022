@@ -4,36 +4,36 @@ namespace AdventOfCode2022.Day02
 {
     internal static class Helper
     {
-        internal static Bid GetOpponentBid(char bid)
+        internal static Bid GetOpponentBid(string bid)
         {
             return bid switch
             {
-                'A' => Bid.Rock,
-                'B' => Bid.Paper,
-                'C' => Bid.Scissors,
+                "A" => Bid.Rock,
+                "B" => Bid.Paper,
+                "C" => Bid.Scissors,
                 _ => throw new NotSupportedException(),
             };
         }
 
-        internal static Bid GetMyBidByOrderCriteria(char bid)
+        internal static Bid GetMyBidByOrderCriteria(string bid)
         {
             return bid switch
             {
-                'X' => Bid.Rock,
-                'Y' => Bid.Paper,
-                'Z' => Bid.Scissors,
+                "X" => Bid.Rock,
+                "Y" => Bid.Paper,
+                "Z" => Bid.Scissors,
                 _ => throw new NotSupportedException(),
             };
         }
 
-        internal static Bid GetMyBidByResultCriteria(Bid opponent, char me)
+        internal static Bid GetMyBidByResultCriteria(Bid opponent, string me)
         {
-            if (me == 'Y')
+            if (me == "Y")
             {
                 return opponent;
             }
 
-            if (me == 'X')
+            if (me == "X")
             {
                 return opponent switch
                 {
@@ -44,7 +44,7 @@ namespace AdventOfCode2022.Day02
                 };
             }
 
-            if (me == 'Z')
+            if (me == "Z")
             {
                 return opponent switch
                 {
