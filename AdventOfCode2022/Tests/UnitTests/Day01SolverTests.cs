@@ -23,7 +23,7 @@ namespace AdventOfCode2022.Tests.UnitTests
         }
 
         [TestMethod]
-        [DataRow("Input", -1)]
+        [DataRow("1000\r\n2000\r\n3000\r\n\r\n4000\r\n\r\n5000\r\n6000\r\n\r\n7000\r\n8000\r\n9000\r\n\r\n10000", 24000)]
         public void SolvePart1CustomTest(string input, long expectedResult)
         {
             TestUtilities.SolvePart1CustomTest(new Day01Solver(input), expectedResult);
@@ -36,7 +36,7 @@ namespace AdventOfCode2022.Tests.UnitTests
         }
 
         [TestMethod]
-        [DataRow("Input", -1)]
+        [DataRow("1000\r\n2000\r\n3000\r\n\r\n4000\r\n\r\n5000\r\n6000\r\n\r\n7000\r\n8000\r\n9000\r\n\r\n10000", 45000)]
         public void SolvePart2CustomTest(string input, long expectedResult)
         {
             TestUtilities.SolvePart2CustomTest(new Day01Solver(input), expectedResult);

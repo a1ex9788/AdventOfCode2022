@@ -1,27 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode2022.Day01
 {
     public class Day01Solver : IDaySolver
     {
-        private readonly IEnumerable<string> input;
+        private readonly IList<long> caloriesByElfOrderedByMax;
 
         public Day01Solver(string input)
         {
-            this.input = input.Split("\r\n");
+            IList<long> caloriesByElf = new List<long>();
 
-            Console.Write(this.input.ToString());
+            foreach (string groupedCaloriesOfElf in input.Split("\r\n\r\n"))
+            {
+                string[] caloriesOfElf = groupedCaloriesOfElf.Split("\r\n");
+
+                caloriesByElf.Add(caloriesOfElf.Select(s => long.Parse(s)).Sum());
+            }
+
+            this.caloriesByElfOrderedByMax = caloriesByElf.OrderByDescending(l => l).ToList();
         }
 
         public long SolvePart1()
         {
-            return 0;
+            return this.caloriesByElfOrderedByMax.First();
         }
 
         public long SolvePart2()
         {
-            return 0;
+            long caloriesOfThreeMaxs = this.caloriesByElfOrderedByMax[0]
+                + this.caloriesByElfOrderedByMax[1] + this.caloriesByElfOrderedByMax[2];
+
+            return caloriesOfThreeMaxs;
         }
     }
 }
