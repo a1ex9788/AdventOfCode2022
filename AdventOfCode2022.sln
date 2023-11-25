@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
+		GetFormattedInput.ps1 = GetFormattedInput.ps1
 		Versions.props = Versions.props
 	EndProjectSection
 EndProject
