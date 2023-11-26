@@ -1,27 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode2022.Day05
 {
     public class Day05Solver : IDaySolver
     {
-        private readonly IEnumerable<string> input;
+        private readonly Supplies supplies;
+        private readonly IEnumerable<ProcedureStep> procedure;
 
         public Day05Solver(string input)
         {
-            this.input = input.Split("\r\n");
+            string[] splittedInput = input.Split("\r\n\r\n");
 
-            Console.Write(this.input.ToString());
+            this.supplies = new Supplies(splittedInput[0]);
+
+            this.procedure = splittedInput[1].Split("\r\n").Select(s => new ProcedureStep(s));
         }
 
         public string SolvePart1()
         {
-            return string.Empty;
+            Supplies currentSupplies = (Supplies)this.supplies.Clone();
+
+            foreach (ProcedureStep procedure in this.procedure)
+            {
+                for (int i = 0; i < procedure.CrateQuantity; i++)
+                {
+                    char crate = currentSupplies.CrateStacks[procedure.Origin - 1].Pop();
+
+                    currentSupplies.CrateStacks[procedure.Destination - 1].Push(crate);
+                }
+            }
+
+            return GetTopCrates(currentSupplies);
         }
 
         public string SolvePart2()
         {
-            return string.Empty;
+            Supplies currentSupplies = (Supplies)this.supplies.Clone();
+
+            foreach (ProcedureStep procedure in this.procedure)
+            {
+                IList<char> crates = new List<char>();
+
+                for (int i = 0; i < procedure.CrateQuantity; i++)
+                {
+                    char crate = currentSupplies.CrateStacks[procedure.Origin - 1].Pop();
+
+                    crates.Add(crate);
+                }
+
+                for (int i = crates.Count - 1; i >= 0; i--)
+                {
+                    currentSupplies.CrateStacks[procedure.Destination - 1].Push(crates[i]);
+                }
+            }
+
+            return GetTopCrates(currentSupplies);
+        }
+
+        private static string GetTopCrates(Supplies currentSupplies)
+        {
+            string topCrates = string.Empty;
+
+            foreach (CrateStack crateStack in currentSupplies.CrateStacks)
+            {
+                topCrates += crateStack.Pop();
+            }
+
+            return topCrates;
         }
     }
 }
