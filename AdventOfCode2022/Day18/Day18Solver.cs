@@ -9,7 +9,7 @@ namespace AdventOfCode2022.Day18
 
         public Day18Solver(string input)
         {
-            this.input = input.Split("\r\n");
+            this.input = input.Split(Environment.NewLine);
 
             Console.Write(this.input.ToString());
         }

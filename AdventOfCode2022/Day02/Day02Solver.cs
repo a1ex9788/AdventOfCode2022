@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022.Day02
@@ -9,7 +10,7 @@ namespace AdventOfCode2022.Day02
 
         public Day02Solver(string input)
         {
-            this.rounds = input.Split("\r\n");
+            this.rounds = input.Split(Environment.NewLine);
         }
 
         public string SolvePart1()

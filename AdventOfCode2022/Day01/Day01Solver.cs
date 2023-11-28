@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode2022.Day01
@@ -11,9 +12,11 @@ namespace AdventOfCode2022.Day01
         {
             IList<long> caloriesByElf = new List<long>();
 
-            foreach (string groupedCaloriesOfElf in input.Split("\r\n\r\n"))
+            string newLine = Environment.NewLine;
+
+            foreach (string groupedCaloriesOfElf in input.Split($"{newLine}{newLine}"))
             {
-                string[] caloriesOfElf = groupedCaloriesOfElf.Split("\r\n");
+                string[] caloriesOfElf = groupedCaloriesOfElf.Split(Environment.NewLine);
 
                 caloriesByElf.Add(caloriesOfElf.Select(s => long.Parse(s)).Sum());
             }

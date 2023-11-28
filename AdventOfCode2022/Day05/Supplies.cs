@@ -10,7 +10,7 @@ namespace AdventOfCode2022.Day05
         {
             this.CrateStacks = new List<CrateStack>();
 
-            IList<string> stacksAndNumbers = supplies.Split("\r\n").ToList();
+            IList<string> stacksAndNumbers = supplies.Split(Environment.NewLine).ToList();
 
             string numbers = stacksAndNumbers.Last();
             int numbersCount = Convert.ToInt32(numbers.SkipLast(1).Last().ToString());

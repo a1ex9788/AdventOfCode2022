@@ -13,7 +13,7 @@ namespace AdventOfCode2022.Day07
         {
             this.Commands = new List<Command>();
 
-            IEnumerable<string> lines = terminalOutput.Split("\r\n");
+            IEnumerable<string> lines = terminalOutput.Split(Environment.NewLine);
 
             StringBuilder currentCommand = new StringBuilder();
             currentCommand.AppendLine(lines.First());

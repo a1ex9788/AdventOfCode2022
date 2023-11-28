@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode2022.Day05
@@ -10,11 +11,12 @@ namespace AdventOfCode2022.Day05
 
         public Day05Solver(string input)
         {
-            string[] splittedInput = input.Split("\r\n\r\n");
+            string newLine = Environment.NewLine;
+            string[] splittedInput = input.Split($"{newLine}{newLine}");
 
             this.supplies = new Supplies(splittedInput[0]);
 
-            this.procedure = splittedInput[1].Split("\r\n").Select(s => new ProcedureStep(s));
+            this.procedure = splittedInput[1].Split(Environment.NewLine).Select(s => new ProcedureStep(s));
         }
 
         public string SolvePart1()

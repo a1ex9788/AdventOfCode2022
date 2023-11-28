@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode2022.Day03
@@ -9,7 +10,7 @@ namespace AdventOfCode2022.Day03
 
         public Day03Solver(string input)
         {
-            this.rucksacks = input.Split("\r\n");
+            this.rucksacks = input.Split(Environment.NewLine);
         }
 
         public string SolvePart1()

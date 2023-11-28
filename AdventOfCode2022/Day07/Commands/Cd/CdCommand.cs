@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022.Day07.Commands.Cd
 {
@@ -6,13 +7,13 @@ namespace AdventOfCode2022.Day07.Commands.Cd
     {
         internal CdCommand(string command)
         {
-            if (command.EndsWith("\r\n"))
+            if (command.EndsWith(Environment.NewLine))
             {
                 command = command[..(command.Length - 2)];
             }
 
             GroupCollection matchGroups = Regex.Match(
-                command.Replace(@"\r\n", string.Empty), @"\$ cd (.*)").Groups;
+                command.Replace(@Environment.NewLine, string.Empty), @"\$ cd (.*)").Groups;
 
             this.DirectoryName = matchGroups[1].Value;
         }

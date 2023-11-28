@@ -16,7 +16,7 @@ namespace AdventOfCode2022.Tests.UnitTests.Day07
         [DataRow("/", "")]
         [DataRow("directory", "")]
         [DataRow("..", "")]
-        [DataRow(@"directory\r\n", "directory")]
+        [DataRow("directory\r\n", "directory")]
         public void CdCommandTest(string directory, string? expectedDirectory)
         {
             if (string.IsNullOrEmpty(expectedDirectory))
